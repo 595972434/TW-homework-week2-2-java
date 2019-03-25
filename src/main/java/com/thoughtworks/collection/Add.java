@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Add {
@@ -72,6 +73,14 @@ public class Add {
         return result;
     }
 
+    public List<Integer> getProcessedList(List<Integer> arrayList) {
+        List<Integer> result=new ArrayList<>();
+        for(int i=1;i<arrayList.size();i++){
+            result.add((arrayList.get(i)+arrayList.get(i-1))*3);
+        }
+        return result;
+    }
+
     public double getMedianOfEven(List<Integer> arrayList) {
         throw new NotImplementedException();
     }
@@ -92,7 +101,4 @@ public class Add {
         throw new NotImplementedException();
     }
 
-    public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
-    }
 }
