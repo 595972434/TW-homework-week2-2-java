@@ -2,8 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
@@ -69,6 +68,20 @@ public class CollectionOperator {
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {
-        throw new NotImplementedException();
+
+        List<Integer> result=new ArrayList<>(Arrays.asList(firstArray));
+        for(int i=0;i<secondArray.length;i++){
+            int findFlag=0;
+            for(int j=0;j<firstArray.length;j++){
+                if(secondArray[i]==firstArray[j]){
+                    findFlag=1;
+                    continue;
+                }
+            }
+            if(findFlag==0){
+                result.add(secondArray[i]);
+            }
+        }
+        return result;
     }
 }
