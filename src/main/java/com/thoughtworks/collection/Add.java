@@ -123,7 +123,6 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-
         List<Integer> result=new ArrayList<>();
         for(int i=0;i<arrayList.size();i++){
             if(arrayList.get(i)%2==0){
@@ -136,7 +135,19 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> evenList=new ArrayList<>();
+        List<Integer> oddList=new ArrayList<>();
+        for(int i=0;i<arrayList.size();i++){
+            if(arrayList.get(i)%2==0){
+                evenList.add(arrayList.get(i));
+            }
+            else{
+                oddList.add(arrayList.get(i));
+            }
+        }
+        Collections.sort(evenList);
+        Collections.sort(oddList,Collections.reverseOrder());
+        evenList.addAll(oddList);
+        return evenList;
     }
-
 }
