@@ -43,7 +43,15 @@ public class Filter {
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new NotImplementedException();
+        List<Integer> result=new ArrayList<>();
+        for(int i=0;i<firstList.size();i++){
+            for(int j=0;j<secondList.size();j++){
+                if(firstList.get(i)==secondList.get(j)){
+                    result.add(firstList.get(i));
+                }
+            }
+        }
+        return result;
     }
 
 
