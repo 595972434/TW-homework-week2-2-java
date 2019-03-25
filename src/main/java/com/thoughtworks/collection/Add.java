@@ -101,7 +101,15 @@ public class Add {
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> result=new ArrayList<>();
+        double Result;
+        for(int i=0;i<arrayList.size();i++){
+            if(arrayList.get(i)%2==0){
+                result.add(arrayList.get(i));
+            }
+        }
+        Result=result.stream().mapToDouble(x->x).sum();
+        return Result/result.size();
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
