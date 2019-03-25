@@ -2,9 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Filter {
 
@@ -33,12 +31,20 @@ public class Filter {
         }
         return result;
     }
+    public List<Integer> getDifferentElements() {
+
+        Set<Integer> set= new HashSet();
+        for(int i=0;i<array.size();i++)
+        {
+            set.add(array.get(i));
+        }
+        List<Integer> result=new ArrayList<>(set);
+        return result;
+    }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
         throw new NotImplementedException();
     }
 
-    public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
-    }
+
 }
