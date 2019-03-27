@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Reduce {
@@ -41,7 +42,15 @@ public class Reduce {
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        double result=0;
+        Collections.sort(arrayList);
+        if(arrayList.size()%2==0){
+            result=(double)(arrayList.get(arrayList.size()/2)+arrayList.get(arrayList.size()/2-1))/2;
+        }
+        else{
+            result=(double)(arrayList.get(arrayList.size()/2));
+        }
+        return result;
     }
 
     public int getFirstEven() {
