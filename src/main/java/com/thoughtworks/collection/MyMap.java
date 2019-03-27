@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import org.apache.commons.collections.ArrayStack;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
@@ -27,7 +28,12 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+
+        List <String>result =new ArrayList<>();
+        for(int i=0;i<array.size();i++){
+            result.add((char)(array.get(i)+0x60)+"");
+        }
+        return result;
     }
 
     public List<String> mapLetters() {
