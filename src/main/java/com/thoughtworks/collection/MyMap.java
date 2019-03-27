@@ -37,7 +37,19 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+
+        List <String>result =new ArrayList<>();
+        for(int i=0;i<array.size();i++){
+            int num=array.get(i);
+            String str="";
+            while(num>0){
+                num--;
+                str=(char)(num%26+0x61)+str;
+                num=(num-num%26)/26;
+            }
+            result.add(str);
+        }
+        return result;
     }
 
     public List<Integer> sortFromBig() {
