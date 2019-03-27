@@ -80,7 +80,13 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        int num=0;
+        for(int i=0;i<arrayList.size();i++){
+            if(arrayList.get(i)%2==1){
+                num=arrayList.get(i);
+            }
+        }
+        return num;
     }
 
     public int getIndexOfLastOdd() {
