@@ -90,6 +90,12 @@ public class Reduce {
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        int num=0;
+        for(int i=0;i<arrayList.size();i++){
+            if(arrayList.get(i)%2==1){
+                num=i;
+            }
+        }
+        return num;
     }
 }
